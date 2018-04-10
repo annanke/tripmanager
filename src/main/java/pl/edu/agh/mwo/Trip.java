@@ -7,6 +7,9 @@ public class Trip {
 	ArrayList<Photo> photos=new ArrayList<>();
 
 	public void addPhoto(Photo photo) {
+		if (photo==null || photo.length()==0) {
+			throw new IllegalArgumentException();
+		}
 		photos.add(photo);
 	}
 

@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Trip {
-	String name;
-	String description;
-	ArrayList<Photo> photos=new ArrayList<>();
+	public String name; // wg diagramu rozumiem ze to pole jest publiczne, pomijam wiec tworzenie geterow i setterow
+	public String description; // wg diagramu rozumiem ze to pole jest publiczne, pomijam wiec tworzenie geterow i setterow
+	
+	private ArrayList<Photo> photos=new ArrayList<>();
 
 	Trip(){
 	}

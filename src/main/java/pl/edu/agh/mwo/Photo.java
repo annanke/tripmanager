@@ -3,10 +3,8 @@ package pl.edu.agh.mwo;
 import java.io.File;
 
 public class Photo extends File{
-
-
-	//File photo; //= new File("CracowWinter.JPG");
-	String comment;
+	
+	public String comment; // wg diagramu rozumiem ze to pole jest publiczne, pomijam wiec tworzenie geterow i setterow
 	
 	public Photo(String pathname) {
 		super(pathname);
@@ -16,8 +14,4 @@ public class Photo extends File{
 		super(pathname);
 		this.comment=comment;
 	}
-	
-/*	Photo (File file){
-		this.photo=file;
-	}*/
 }

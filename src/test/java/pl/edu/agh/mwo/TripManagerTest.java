@@ -1,6 +1,8 @@
 package pl.edu.agh.mwo;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -11,20 +13,56 @@ public class TripManagerTest {
 	
 	@Test
 	public void isTripAdded() {
+		TripManager tripManager = new TripManager();
+		assertEquals(0, tripManager.getTrip().size());
 		Trip trip =new Trip();
-				
-		assertEquals(0, trip.getPhotos().size());
-		assertEquals(1, trip.getPhotos().size());
+		tripManager.addTrip(trip);
+		assertEquals(1, tripManager.getTrip().size());
 	}
 	
-/*	@Test(expected= IllegalArgumentException.class)
-	public void noPhotoAdded() {
+	@Test
+	public void isTripRemoved() {
+		TripManager tripManager = new TripManager();
 		Trip trip =new Trip();
-		Photo photo = null;
-		trip.addPhoto(photo);
-		
+		tripManager.addTrip(trip);
+		assertEquals(1, tripManager.getTrip().size());
+		tripManager.removeTrip(trip);
+		assertEquals(0, tripManager.getTrip().size());
 	}
 	
+	@Test
+	public void TripFoundByName() {
+		TripManager tripManager = new TripManager();
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
+		tripManager.addTrip(trip);
+		assertNotNull(tripManager.findTrip("Mexico")); 
+	}
+	
+	@Test
+	public void TripFoundByPartOfDescription() {
+		TripManager tripManager = new TripManager();
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
+		tripManager.addTrip(trip);
+		assertNotNull(tripManager.findTrip("samolotem")); 
+	}
+	
+	@Test
+	public void returnNullWhenNoTripFound() {
+		TripManager tripManager = new TripManager();
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
+		tripManager.addTrip(trip);
+		assertNull(tripManager.findTrip("Peru"));
+	}
+	
+	@Test
+	public void returnNullWhenNoTripFoundByDescriprionPart() {
+		TripManager tripManager = new TripManager();
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
+		tripManager.addTrip(trip);
+		assertNull(tripManager.findTrip("autokarem"));
+	}
+	
+	/*	
 	@Test(expected= IllegalArgumentException.class)
 	public void emptyPhotoAdded() {
 		Trip trip =new Trip();

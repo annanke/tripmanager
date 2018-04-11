@@ -62,13 +62,4 @@ public class TripManagerTest {
 		assertNull(tripManager.findTrip("autokarem"));
 	}
 	
-	/*	
-	@Test(expected= IllegalArgumentException.class)
-	public void emptyPhotoAdded() {
-		Trip trip =new Trip();
-		Photo photo = new Photo("");;
-		trip.addPhoto(photo);
-		
-	}*/
-	
 }

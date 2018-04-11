@@ -6,11 +6,9 @@ public class TripManager {
 	
 	private ArrayList<Trip> trips=new ArrayList<>();
 
-
 	public ArrayList getTrip() {
 		return trips;
 	}
-
 
 	public void addTrip(Trip trip) {
 		trips.add(trip);
@@ -19,7 +17,6 @@ public class TripManager {
 
 	public void removeTrip(Trip trip) {
 		trips.remove(trip);
-		
 	}
 
 	public Trip findTrip(String keyword) {

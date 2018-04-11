@@ -12,6 +12,9 @@ public class Photo extends File{
 	
 	public Photo(String pathname, String comment) {
 		super(pathname);
+		if (pathname==null || pathname.length()==0) {
+			throw new IllegalArgumentException();
+		}
 		this.comment=comment;
 	}
 }

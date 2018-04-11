@@ -15,7 +15,7 @@ public class TripManagerTest {
 	public void isTripAdded() {
 		TripManager tripManager = new TripManager();
 		assertEquals(0, tripManager.getTrip().size());
-		Trip trip =new Trip();
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
 		tripManager.addTrip(trip);
 		assertEquals(1, tripManager.getTrip().size());
 	}
@@ -23,7 +23,7 @@ public class TripManagerTest {
 	@Test
 	public void isTripRemoved() {
 		TripManager tripManager = new TripManager();
-		Trip trip =new Trip();
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
 		tripManager.addTrip(trip);
 		assertEquals(1, tripManager.getTrip().size());
 		tripManager.removeTrip(trip);

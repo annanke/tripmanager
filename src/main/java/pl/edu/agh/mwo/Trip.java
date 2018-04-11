@@ -9,10 +9,11 @@ public class Trip {
 	
 	private ArrayList<Photo> photos=new ArrayList<>();
 
-	Trip(){
-	}
-	
 	Trip(String name, String description){
+		if (name.length()==0) {
+			System.out.println("Trip needs to have a name!");
+			throw new IllegalArgumentException();
+		}
 		this.name=name;
 		this.description=description;
 	}

@@ -11,7 +11,7 @@ public class TripTest {
 	
 	@Test
 	public void isPhotoAdded() {
-		Trip trip =new Trip();
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
 		Photo photo=new Photo("CracowWinter.JPG");
 		assertEquals(0, trip.getPhotos().size());
 		trip.addPhoto(photo);
@@ -20,16 +20,21 @@ public class TripTest {
 	
 	@Test(expected= IllegalArgumentException.class)
 	public void noPhotoAdded() {
-		Trip trip =new Trip();
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
 		Photo photo = null;
 		trip.addPhoto(photo);
 	}
 	
 	@Test(expected= IllegalArgumentException.class)
 	public void emptyPhotoAdded() {
-		Trip trip =new Trip();
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
 		Photo photo = new Photo("");;
 		trip.addPhoto(photo);
+	}
+	
+	@Test(expected= IllegalArgumentException.class)
+	public void noTripNameAdded() {
+		Trip trip =new Trip("", "samolotem do Cancun");
 	}
 	
 /*	@Test

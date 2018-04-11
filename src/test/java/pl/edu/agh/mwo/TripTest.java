@@ -25,7 +25,6 @@ public class TripTest {
 		Trip trip =new Trip();
 		Photo photo = null;
 		trip.addPhoto(photo);
-		
 	}
 	
 	@Test(expected= IllegalArgumentException.class)
@@ -33,7 +32,18 @@ public class TripTest {
 		Trip trip =new Trip();
 		Photo photo = new Photo("");;
 		trip.addPhoto(photo);
-		
+	}
+	
+	@Test
+	public void TripNameExists() {
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
+		assertEquals("Mexico", trip.name);
+	}
+	
+	@Test
+	public void TripDescriptionExists() {
+		Trip trip =new Trip("Mexico", "samolotem do Cancun");
+		assertEquals("samolotem do Cancun", trip.description);
 	}
 	
 }

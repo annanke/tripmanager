@@ -10,8 +10,13 @@ public class Photo extends File{
 	
 	public Photo(String pathname) {
 		super(pathname);
-		// TODO Auto-generated constructor stub
 	}
+	
+	public Photo(String pathname, String comment) {
+		super(pathname);
+		this.comment=comment;
+	}
+	
 /*	Photo (File file){
 		this.photo=file;
 	}*/

@@ -12,9 +12,7 @@ public class TripTest {
 	@Test
 	public void isPhotoAdded() {
 		Trip trip =new Trip();
-		//Photo photo=new Photo(new File("CracowWinter.JPG"));
 		Photo photo=new Photo("CracowWinter.JPG");
-		//assertTrue(trip.addPhoto(photo));
 		assertEquals(0, trip.getPhotos().size());
 		trip.addPhoto(photo);
 		assertEquals(1, trip.getPhotos().size());
